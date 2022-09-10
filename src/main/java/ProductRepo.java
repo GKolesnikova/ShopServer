@@ -1,29 +1,22 @@
 import java.util.*;
 
-public class ProductRepo extends Product {
+public class ProductRepo{
 
 
-    Map<Integer, String> products = new HashMap<>();
+    private Map<Integer, Product> products = new HashMap<>();
 
-    public ProductRepo(Map<Integer, String> products) {
-        super();
+    public ProductRepo(Map<Integer, Product> products) {
         this.products = products;
     }
 
-    public Map<Integer, String> getProducts() {
-        return products;
+    public List<Product> listProducts() {
+        ArrayList<Product> neueListProducts = new ArrayList<>(products.values());
+        return neueListProducts;
     }
 
-    public void setProducts(Map<Integer, String> products) {
-        this.products = products;
+    public Product getProduct(Integer id) {
+        return products.get(id) ;
     }
-
-
-    //get();
-
-    //list();
-
-
 
 
 }
