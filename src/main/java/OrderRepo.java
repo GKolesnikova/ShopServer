@@ -20,4 +20,12 @@ public class OrderRepo {
     public Order addOrderProduct(Order order) {
         return orders.put(order.getId(), order);
     }
+
+    @Override
+    public String toString() {
+        return "OrderRepo{" +
+                "orders=" + orders +
+                '}';
+    }
 }
+
