@@ -1,3 +1,6 @@
+package repo;
+import model.Product;
+
 import java.util.*;
 
 public class ProductRepo{
@@ -9,14 +12,15 @@ public class ProductRepo{
         this.products = products;
     }
 
+    public Product getProduct(Integer id) {
+        return products.get(id) ;
+    }
+
     public List<Product> listProducts() {
         ArrayList<Product> neueListProducts = new ArrayList<>(products.values());
         return neueListProducts;
     }
 
-    public Product getProduct(Integer id) {
-        return products.get(id) ;
-    }
 
 
 }

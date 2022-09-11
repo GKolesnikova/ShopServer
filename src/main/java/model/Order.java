@@ -1,3 +1,4 @@
+package model;
 import java.util.*;
 
 public class Order {
@@ -46,7 +47,7 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
+        return "model.Order{" +
                 "id=" + id +
                 ", products=" + products +
                 '}';
