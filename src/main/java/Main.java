@@ -3,10 +3,7 @@ import model.Product;
 import repo.OrderRepo;
 import repo.ProductRepo;
 import service.ShopService;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,23 +29,30 @@ public class Main {
 
 
         Map<Integer, Product> productsSet = new HashMap<>();
-        ProductRepo productepo = new ProductRepo (productsSet);
+        productsSet.put(product1.getId(), product1);
+        productsSet.put(product2.getId(), product2);
+        productsSet.put(product3.getId(), product3);
+        productsSet.put(product4.getId(), product4);
+
+
+        ProductRepo productepo = new ProductRepo(productsSet);
 
 
         ShopService shopService = new ShopService(productepo, orderRepo);
-        System.out.println(" *** ");
-        System.out.println( shopService.getProduct(3));
 
-        System.out.println(" *** ");
+        System.out.println( shopService.getProduct (7));
+
+
+
         System.out.println( shopService.listProducts());
 
-        System.out.println(" *** ");
+
         System.out.println( shopService.addOrder(order));
 
-        System.out.println(" *** ");
-        System.out.println( shopService.getOrder(2));
 
-        System.out.println(" *** ");
+        System.out.println( shopService.getOrder(1));
+
+
         System.out.println( shopService.listOrder());
 
 

@@ -12,7 +12,10 @@ public class ProductRepo{
         this.products = products;
     }
 
-    public Product getProduct(Integer id) {
+    public Product getProduct(Integer id) throws Exception {
+        if ( !id.equals(products.get(id))) {
+            throw new Exception("The program was urgently stopped");
+        }
         return products.get(id) ;
     }
 

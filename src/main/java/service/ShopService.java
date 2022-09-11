@@ -15,9 +15,14 @@ public class ShopService {
         this.orderRepo = orderRepo;
     }
 
-    public Product getProduct (Integer id) {
-            return productRepo.getProduct(id);
-        }
+    public Product getProduct (Integer id){
+            try {
+                return productRepo.getProduct(id);}
+            catch (Exception ex) {
+                System.out.println("You entered an incorrect product id, please enter a different id.");
+            }
+        return null;
+    }
 
         public List<Product> listProducts () {
             return productRepo.listProducts();
