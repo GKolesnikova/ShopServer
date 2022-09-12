@@ -34,14 +34,12 @@ public class Main {
         productsSet.put(product3.getId(), product3);
         productsSet.put(product4.getId(), product4);
 
-
         ProductRepo productepo = new ProductRepo(productsSet);
 
 
         ShopService shopService = new ShopService(productepo, orderRepo);
 
         System.out.println( shopService.getProduct (7));
-
 
 
         System.out.println( shopService.listProducts());
