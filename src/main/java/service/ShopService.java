@@ -16,12 +16,15 @@ public class ShopService {
     }
 
     public static Product getProduct(Integer id){
+        Product product = null;
             try {
-                return productRepo.getProduct(id);}
+                product = productRepo.getProduct(id);}
             catch (Exception ex) {
-                System.out.println("You entered an incorrect product id, please enter a different id.");
+                System.out.println("You entered an incorrect product id, " +
+                        "please enter a different id.");
+                //return null;
             }
-        return null;
+        return product;
     }
 
         public List<Product> listProducts () {
@@ -29,7 +32,7 @@ public class ShopService {
         }
 
         public Order addOrder (Order order) {
-            return orderRepo.addOrderProduct(order);
+             return orderRepo.addOrderProduct(order);
         }
 
         public Order getOrder (Integer id) {
