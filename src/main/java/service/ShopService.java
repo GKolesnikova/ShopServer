@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ShopService {
 
-        private ProductRepo productRepo;
+        private static ProductRepo productRepo;
         private OrderRepo orderRepo;
 
     public ShopService(ProductRepo productRepo, OrderRepo orderRepo) {
@@ -15,7 +15,7 @@ public class ShopService {
         this.orderRepo = orderRepo;
     }
 
-    public Product getProduct (Integer id){
+    public static Product getProduct(Integer id){
             try {
                 return productRepo.getProduct(id);}
             catch (Exception ex) {
