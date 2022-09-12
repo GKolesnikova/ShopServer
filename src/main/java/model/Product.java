@@ -1,9 +1,11 @@
+package model;
+
 public class Product {
 
     private Integer id;
     private String name;
 
-    public Product() {
+    public Product(Integer id, String name) {
         this.setId(id);
         this.setName(name);
     }
@@ -44,7 +46,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "model.Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
